@@ -7,6 +7,8 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 const app = express();
+app.use(express.json());
+app.use("/api/users", userRoutes);
 
 connectDB();
 
